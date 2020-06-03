@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Lotto.Views.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lotto.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="718" d:DesignWidth="1368">
+    <Grid Background="{x:Null}">
+        <!--Pusta strona, aby wrócić do menu. Można by też było po prostu 
+        samo menu zrobić jako osobny widok, ale w ten sposób też jest to możliwe. 
+        Dzięki temu że nie zawiera tła, możliwe jest aby kliknąć na znajdujące się pod nią menu -->
+    </Grid>
+</UserControl>

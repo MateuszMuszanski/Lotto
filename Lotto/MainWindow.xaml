@@ -1,0 +1,208 @@
+﻿<Window x:Class="Lotto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lotto"
+        xmlns:viewmodels ="clr-namespace:Lotto.Class"
+        xmlns:views ="clr-namespace:Lotto.Views"
+        mc:Ignorable="d"
+        Icon="logo.ico"
+        Title="" Width="1366" Height="768" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <!--Styl przycisku-->
+    <Window.Resources>
+        <Style x:Key="myButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#FF2F2FEA" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="rectangle" Fill="{TemplateBinding Background}" Stroke="Black">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect ShadowDepth="3"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Menu przejścia do odpowiedniego zakładu, same wiązania pomiędzy widokami-->
+        <DataTemplate x:Name="EuroJackPot" DataType="{x:Type viewmodels:EuroJackPot_Mod}">
+            <views:EuroJackPot DataContext="{Binding}">
+            </views:EuroJackPot>
+        </DataTemplate>
+        <DataTemplate x:Name="Multi_Multi" DataType="{x:Type viewmodels:Multi_Mod}">
+            <views:Multi DataContext="{Binding}">
+            </views:Multi>
+        </DataTemplate>
+        <DataTemplate x:Name="Mini" DataType="{x:Type viewmodels:Mini_Mod}">
+            <views:Mini_Lotto DataContext="{Binding}">
+            </views:Mini_Lotto>
+        </DataTemplate>
+        <DataTemplate x:Name="Lotto_Lotto" DataType="{x:Type viewmodels:Lotto_Mod}">
+            <views:Lotto_Lotto DataContext="{Binding}">
+            </views:Lotto_Lotto>
+        </DataTemplate>
+    </Window.Resources>
+    <!--Tworzenie grida który jest tłem dla całego programu-->
+    <Grid Background="DarkGray">
+        <StackPanel>
+            <!--Złoty pasek na którym znajduje się przycisk Home, minimalizacja powiększenie oraz wyjście z aplikacji-->
+            <Grid Background="Gold" Height="50" Margin="0" MouseDown="Moving_Window">
+                <!--Przycisk Home | powrotu do głównego menu-->
+                <Button x:Name="Home" Width="50" Height="50" Margin ="10 0 0 0" Background="{x:Null}"
+                        BorderBrush="{x:Null}" Click="Home_Click" HorizontalAlignment="Left" ToolTip="Home">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Image Source="/Lotto;component/Sources/logo.png" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <!--Przycisk minimalizacji-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="Minimize" Width="50" Height="50" Margin ="2 0 0 0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Min_View">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="/Lotto;component/Sources/mini.png" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Opacity" Value="0.7"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!--Przycisk do maksymalizacji-->
+                    <Button x:Name="Maximize" Width="50" Height="50" Margin ="2 0 0 0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Max_View">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="/Lotto;component/Sources/max.png" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Opacity" Value="0.7"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!--Przycisk zamknięcia aplikacji-->
+                    <Button x:Name="Exit" Width="50" Height="50" Margin ="2 0 0 0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Exit_button">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="/Lotto;component/Sources/exit.png" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Opacity" Value="0.7"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <!--Złoty pasek koniec-->
+            </Grid>
+            <!--Początek definicji menu wyboru-->
+            <StackPanel>
+                <!--Definiowanie ilości kolumn oraz wierszy-->
+                <Grid Height="auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*">
+
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="1*">
+
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="1*">
+
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--Przycisk przejścia do EuroJackPot-->
+                    <Button x:Name="Euro" Grid.Column="0" Grid.Row="0" Click="Euro_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="/Lotto;component/Sources/euro.png" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="false">
+                                        <Setter Property="Opacity" Value="0.8"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!--Pzycisk przejścia do MutliMulti-->
+                    <Button x:Name="Multi" Grid.Row="1" Grid.Column="0" Click="Multi_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="/Lotto;component/Sources/multi.png" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="false">
+                                        <Setter Property="Opacity" Value="0.8"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!--Przycisk przejścia do Lotto-->
+                    <Button x:Name="Lotto" Grid.Column="1" Grid.Row="0" Click="Lotto_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="/Lotto;component/Sources/lotto.png" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="false">
+                                        <Setter Property="Opacity" Value="0.8"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!--Przycisk przejscia do MiniLotto-->
+                    <Button x:Name="Mini_Lotto" Grid.Column="1" Grid.Row="1" Click="Mini_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Source="/Lotto;component/Sources/mlotto.png" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="false">
+                                        <Setter Property="Opacity" Value="0.8"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!--Definicja miejsca dla odpowiedniego przejścia, tu pojawiają się 
+                    odpowiednie widoki, zależnie od wcześniejszego wyboru-->
+                    <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Content="{Binding}">
+                        
+                    </ContentControl>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,272 @@
+﻿<UserControl x:Class="Lotto.Views.Multi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lotto.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="718" d:DesignWidth="1368">
+    <Grid Background="White">
+        <!--Siatka zawierająca obecną liczbę kul (standardowo 6) która zmienia tą wartość 
+        w zależności od wyboru, oraz przyciski służące do zmiany ilości kul -->
+        <Grid Height="50" VerticalAlignment="Top" x:Name="wybor">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--Napis Liczba kul-->
+            <Border BorderThickness="2 2 0 2" BorderBrush="DarkGoldenrod">
+                <TextBlock FontSize="35" FontFamily="Calibri">Liczba kul:</TextBlock>
+            </Border>
+            <!--Obecna liczba kul-->
+            <Border Grid.Column="1" Width="auto" CornerRadius="0" BorderThickness="0 2 0 2" BorderBrush="DarkGoldenrod">
+                <TextBlock x:Name="Liczba"  FontSize="35" FontFamily="Calibri" TextAlignment="Center">1</TextBlock>
+            </Border>
+            <!--Przycisk zmiany na 1-->
+            <Border Grid.Column="2" BorderBrush="DarkGoldenrod" BorderThickness="2">
+                <Button Click="Jeden" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Jeden" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">1</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <!--Przycisk zmiany na 2-->
+            <Border Grid.Column="3" BorderBrush="DarkGoldenrod" BorderThickness="2">
+                <Button Click="Dwa" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Dwa" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">2</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <!--Przycisk zmiany na 3-->
+            <Border Grid.Column="4" BorderThickness="0 2 0 2" BorderBrush="DarkGoldenrod">
+                <Button Click="Trzy">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Trzy" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">3</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <!--Przycisk zmiany na 4-->
+            <Border Grid.Column="5" BorderThickness="2 2 0 2" BorderBrush="DarkGoldenrod">
+                <Button Click="Cztery">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Cztery" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">4</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <!--Przycisk zmiany na 5-->
+            <Border Grid.Column="6" BorderThickness="2 2 0 2" BorderBrush="DarkGoldenrod">
+                <Button Click="Piec">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Piec" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">5</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <!--Przycisk zmiany na 6-->
+            <Border Grid.Column="7" BorderThickness="2 2 0 2" BorderBrush="DarkGoldenrod">
+                <Button Click="Szesc">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Szesc" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">6</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <!--Przycisk zmiany na 7-->
+            <Border Grid.Column="8" BorderThickness="2 2 0 2" BorderBrush="DarkGoldenrod">
+                <Button Click="Siedem">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Siedem" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">7</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <!--Przycisk zmiany na 8-->
+            <Border Grid.Column="9" BorderThickness="2 2 2 2" BorderBrush="DarkGoldenrod">
+                <Button Click="Osiem">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Osiem" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">8</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <Border Grid.Column="10" BorderBrush="DarkGoldenrod" BorderThickness="2">
+                <Button Click="Dziewiec" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Dziewiec" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">9</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <Border Grid.Column="11" BorderBrush="DarkGoldenrod" BorderThickness="2">
+                <Button Click="Dziesiec" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <TextBlock x:Name="Dziesiec" FontSize="35" TextAlignment="Center" FontFamily="Calibri" Background="#f0d23e">10</TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+        </Grid>
+        <!--Panel kul-->
+        <DockPanel VerticalAlignment="Top" Background="Transparent" Margin="0 50 0 0">
+            <StackPanel>
+                <!--Implementacja wierszy i kolumn panelu-->
+                <Grid x:Name="Lotto" Height="462" Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Kula 1-->
+                    <Border x:Name="bor0" CornerRadius="180" Grid.Row="0" Grid.Column="0" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula0" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 2-->
+                    <Border x:Name="bor1" CornerRadius="180" Grid.Row="0" Grid.Column="1" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula1" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 3-->
+                    <Border x:Name="bor2" CornerRadius="180" Grid.Row="0" Grid.Column="2" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula2" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 4-->
+                    <Border x:Name="bor3" CornerRadius="180" Grid.Row="0" Grid.Column="3" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula3" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 5-->
+                    <Border x:Name="bor4" CornerRadius="180" Grid.Row="0" Grid.Column="4" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula4" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 6-->
+                    <Border x:Name="bor5" CornerRadius="180" Grid.Row="1" Grid.Column="0" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula5" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 7-->
+                    <Border x:Name="bor6" CornerRadius="180" Grid.Row="1" Grid.Column="1" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula6" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 8-->
+                    <Border x:Name="bor7" CornerRadius="180" Grid.Row="1" Grid.Column="2" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula7" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 9-->
+                    <Border x:Name="bor8" CornerRadius="180" Grid.Row="1" Grid.Column="3" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula8" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <!--Kula 10-->
+                    <Border x:Name="bor9" CornerRadius="180" Grid.Row="1" Grid.Column="4" BorderBrush="Gold" BorderThickness="5" Background="white" MaxWidth="231" MaxHeight="231">
+                        <TextBlock x:Name="kula9" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" FontWeight="Bold"></TextBlock>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </DockPanel>
+        <!--Panel przycisku do losowania liczb-->
+        <StackPanel Height="190" VerticalAlignment="Bottom">
+            <Grid Height="190">
+                <!--Orientacja przycisku-->
+                <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 20">
+                    <!--Wygląd i właściwości przycisku-->
+                    <Border CornerRadius="20" BorderBrush="Gold" BorderThickness="5">
+                        <Button x:Name="Losuj" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Multi_Klik" Height="150" Width="300" FontSize="100" Foreground="DarkGoldenrod">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <!--Zmiana przezroczystości to najechaniu na przycisk-->
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="false">
+                                            <Setter Property="Opacity" Value="0.7"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                    <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Calibri">Losuj</TextBlock>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Border>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
