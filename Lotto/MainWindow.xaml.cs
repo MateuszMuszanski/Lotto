@@ -31,6 +31,8 @@ namespace Lotto
         /// <summary>
         /// Metoda odpowiedzialna za wyłączenie programu
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Exit_button (object sender,RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -38,6 +40,8 @@ namespace Lotto
         /// <summary>
         /// Metoda umożliwiająca poruszanie oknem programu
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Moving_Window(object sender, RoutedEventArgs e)
         {
             DragMove();
@@ -45,6 +49,8 @@ namespace Lotto
         /// <summary>
         /// Metoda odpowiedzialna za powiększanie i pomniejszanie okna programu
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Max_View(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Normal)
@@ -59,6 +65,8 @@ namespace Lotto
         /// <summary>
         /// Metoda odpowiedzialna za minimalizacje okna programu
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Min_View(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Normal)
@@ -70,9 +78,12 @@ namespace Lotto
                 this.WindowState = WindowState.Minimized;
             }
         }
+
         /// <summary>
         /// Metoda odpowiedzialna za przejście do okienka EuroJackPot
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Euro_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new EuroJackPot_Mod();
@@ -80,6 +91,8 @@ namespace Lotto
         /// <summary>
         /// Metoda odpowiedzialna za przejście do okienka Multi Multi
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Multi_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Multi_Mod();
@@ -87,6 +100,8 @@ namespace Lotto
         /// <summary>
         /// Metoda odpowiedzialna za przejście do okienka Lotto
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Lotto_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Lotto_Mod();
@@ -94,6 +109,8 @@ namespace Lotto
         /// <summary>
         /// Metoda odpowiedzialna za przejście do okienka Mini Lotto
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Mini_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Mini_Mod();
@@ -101,6 +118,8 @@ namespace Lotto
         /// <summary>
         /// Metoda odpowiedzialna za powrót do głównego menu
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new MainPage();

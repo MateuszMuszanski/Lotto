@@ -75,6 +75,7 @@ namespace Lotto.Views
                 }
                 zmienna--;
             } while (zmienna > 1);
+
             /// Algorytm przypisywania tablicy int do tablicy TexBlock
             for (int i = 0; i < Convert.ToInt32(Liczba.Text); i++)
             {
@@ -90,6 +91,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 1
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Jeden(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "1";
@@ -107,6 +110,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 2
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Dwa(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "2";
@@ -124,6 +129,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 3
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Trzy(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "3";
@@ -141,6 +148,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 4
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cztery(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "4";
@@ -158,6 +167,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 5
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Piec(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "5";
@@ -175,6 +186,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 6
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Szesc(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "6";
@@ -192,6 +205,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 7
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Siedem(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "7";
@@ -209,6 +224,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 8
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Osiem(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "8";
@@ -226,6 +243,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 9
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Dziewiec(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "9";
@@ -242,6 +261,8 @@ namespace Lotto.Views
         /// <summary>
         /// Metoda ta jest odpowiedzialna za zmianę ilości widocznych kul poprzez zmianę wartoścli pola typu TextBlock o nazwie Liczba na 10
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Dziesiec(object sender, RoutedEventArgs e)
         {
             Liczba.Text = "10";
@@ -261,6 +282,8 @@ namespace Lotto.Views
         /// metody ustawiające wartości na odpowiednią poprzez pobieranie liczby z pola TextBlock'a ustawianego w Metodach od Jeden do Dziesięć
         /// Dzięki mechanizmowi polimorfizmu można ustawić ile elementów tablicy tablica1 ma zostać wykorzystanych w losowaniu
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Multi_Klik(object sender, RoutedEventArgs e)
         {
             Liczby licz = null;

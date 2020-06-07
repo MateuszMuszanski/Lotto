@@ -108,6 +108,9 @@ namespace Lotto.Views
         /// <summary>
         /// Ta metoda powoduje ponowne losowanie liczb, zawiera te same tablice oraz algorytmy losujące co konstruktor
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
         private void Klik(object sender, RoutedEventArgs e)
         {
             TextBlock[] tablica1 = new TextBlock[] { kula0, kula1, kula2, kula3, kula4 };
